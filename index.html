@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#173f35" />
+    <meta name="color-scheme" content="light" />
+    <meta
+      name="description"
+      content="面向安徽专升本大学语文与英语的个人复习工作台，优先保证资料来源可追溯。"
+    />
+    <title>皖本复习台 · 2027</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">跳到主要内容</a>
+
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="主导航">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">
+            <span>皖</span>
+          </div>
+          <div>
+            <strong>皖本复习台</strong>
+            <span>2027 · 个人学习系统</span>
+          </div>
+        </div>
+
+        <nav class="side-nav">
+          <button class="nav-item is-active" type="button" data-action="nav" data-page="today">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 11.2 12 4l8 7.2V20a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1z" />
+            </svg>
+            <span>今日</span>
+          </button>
+          <button class="nav-item" type="button" data-action="nav" data-page="learn">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 4h10a3 3 0 0 1 3 3v13H7a2 2 0 0 1-2-2z" />
+              <path d="M7 16h11M8 8h6M8 11h4" />
+            </svg>
+            <span>学习地图</span>
+          </button>
+          <button class="nav-item" type="button" data-action="nav" data-page="practice">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 4h14v16H5zM8 8h8M8 12h5M8 16h3" />
+            </svg>
+            <span>练习</span>
+          </button>
+          <button class="nav-item" type="button" data-action="nav" data-page="mistakes">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 4h12v16l-6-3-6 3z" />
+              <path d="M9 9h6M9 12h4" />
+            </svg>
+            <span>错题</span>
+            <em class="nav-count" id="nav-mistake-count" hidden>0</em>
+          </button>
+          <button class="nav-item" type="button" data-action="nav" data-page="progress">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 20V10M12 20V4M19 20v-7" />
+            </svg>
+            <span>进度</span>
+          </button>
+        </nav>
+
+        <div class="side-focus">
+          <span class="side-focus-label">当前阶段</span>
+          <strong>零基础起步</strong>
+          <p>先建立词汇与句子意识，再进入题型训练。</p>
+          <div class="mini-progress" aria-hidden="true"><span id="side-stage-progress"></span></div>
+        </div>
+
+        <button class="trust-link" type="button" data-action="trust">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3 5 6v5c0 4.6 2.9 8.1 7 10 4.1-1.9 7-5.4 7-10V6z" />
+            <path d="m9.5 12 1.7 1.7 3.7-4" />
+          </svg>
+          <span>
+            <strong>资料核验中心</strong>
+            <small>版本 0.1 · 内容样板</small>
+          </span>
+        </button>
+      </aside>
+
+      <main class="main" id="main-content">
+        <header class="topbar">
+          <div>
+            <p class="topbar-date" id="current-date-label"></p>
+            <h1 id="page-title">今天</h1>
+          </div>
+          <div class="topbar-actions">
+            <button class="date-chip" type="button" data-action="trust">
+              <span class="status-dot"></span>
+              <span id="exam-countdown">预计考试倒计时</span>
+            </button>
+            <button class="trust-icon-button" type="button" data-action="trust" aria-label="查看资料核验中心">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3 5 6v5c0 4.6 2.9 8.1 7 10 4.1-1.9 7-5.4 7-10V6z" />
+                <path d="m9.5 12 1.7 1.7 3.7-4" />
+              </svg>
+            </button>
+            <button class="avatar-button" type="button" data-action="progress" aria-label="查看学习进度">
+              <span>学</span>
+            </button>
+          </div>
+        </header>
+
+        <div class="page-stack">
+          <section class="page-view" data-view="today" aria-labelledby="page-title"></section>
+          <section class="page-view" data-view="learn" hidden></section>
+          <section class="page-view" data-view="practice" hidden></section>
+          <section class="page-view" data-view="mistakes" hidden></section>
+          <section class="page-view" data-view="progress" hidden></section>
+        </div>
+      </main>
+    </div>
+
+    <nav class="mobile-nav" aria-label="移动端主导航">
+      <button class="mobile-nav-item is-active" type="button" data-action="nav" data-page="today">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 11.2 12 4l8 7.2V20a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1z" />
+        </svg>
+        <span>今日</span>
+      </button>
+      <button class="mobile-nav-item" type="button" data-action="nav" data-page="learn">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 4h10a3 3 0 0 1 3 3v13H7a2 2 0 0 1-2-2z" />
+          <path d="M7 16h11M8 8h6M8 11h4" />
+        </svg>
+        <span>地图</span>
+      </button>
+      <button class="mobile-nav-item" type="button" data-action="nav" data-page="practice">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 4h14v16H5zM8 8h8M8 12h5M8 16h3" />
+        </svg>
+        <span>练习</span>
+      </button>
+      <button class="mobile-nav-item" type="button" data-action="nav" data-page="mistakes">
+        <span class="mobile-icon-wrap">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 4h12v16l-6-3-6 3z" />
+            <path d="M9 9h6M9 12h4" />
+          </svg>
+          <em class="nav-count" id="mobile-mistake-count" hidden>0</em>
+        </span>
+        <span>错题</span>
+      </button>
+      <button class="mobile-nav-item" type="button" data-action="nav" data-page="progress">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 20V10M12 20V4M19 20v-7" />
+        </svg>
+        <span>进度</span>
+      </button>
+    </nav>
+
+    <div class="modal-layer" id="modal-layer" hidden>
+      <div class="modal-backdrop" data-action="close-modal"></div>
+      <section
+        class="modal-card"
+        id="modal-card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+      ></section>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+    <noscript>
+      <div class="noscript-message">本学习台需要启用 JavaScript 才能记录答题和学习进度。</div>
+    </noscript>
+
+    <script src="data.js" defer></script>
+    <script src="app.js" defer></script>
+  </body>
+</html>
